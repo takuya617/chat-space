@@ -1,0 +1,48 @@
+.Right-side
+  .Right-side__header
+    .Right-side__group
+      .Right-side__groupName 
+        お肉
+      %ul.Right-side__memberList
+        Member：
+        %li.Right-side__member
+          takuya
+    .Right-side__edit-btn
+      = link_to "#" do 
+        Edit
+  .Right-side__main-list
+    .Right-side__message-room
+      .Right-side__messageInfo
+        .messageInfo__name 
+          タクヤ
+        .messageInfo__day 
+          2020年06月21日15時20分
+      .Right-side__text
+        %p.text__content 
+          美味しい
+    .Right-side__message-room
+      .Right-side__messageInfo
+        .messageInfo__name 
+          タクヤ
+        .messageInfo__day 
+          2020年06月21日15時25分
+      .Right-side__text
+        .text__content 
+          最高
+    .Right-side__message-room
+      .Right-side__messageInfo
+        .messageInfo__name 
+          タクヤ
+        .messageInfo__day 
+          2020年06月21日15時28分
+      .Right-side__text
+        .text__content 
+          お腹減った
+  .Right-side__footer-foom
+    %form.Right-side__new-text
+      .Right-side__input-box
+        %input{type: "text", class: "input-box__message", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon("fas","image", class: "image_icon")
+          %input{type: "file", class: "input-box__image__list"}
+      %input{type: "submit", value: "Send", class: "submit-btn"}

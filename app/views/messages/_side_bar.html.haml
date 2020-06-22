@@ -2,11 +2,11 @@
   .Left-side__header
     .Left-side__items-room
       %h3.items-room__name 
-        タクヤ
+        = current_user.name
       %ul.items-room__icon 
         = link_to "#", class: "Left-side__btn" do
           = icon('far', 'edit', class: "Left-side__btn--edit")
-        = link_to "#", class: "Left-side__btn" do
+        = link_to edit_user_path(current_user) do
           = icon('fas', 'cog',class: "Left-side__btn--cog")
   .Left-side__main-list
     .Left-side__chat-room

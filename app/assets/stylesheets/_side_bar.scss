@@ -24,11 +24,15 @@
     list-style: none;
   }
   &__btn {
-    color: white;
     text-decoration: none;
+    color: white;
   }
   &__btn--edit {
     margin-right: 5px;
+    color: white;
+  }
+  &__btn--cog {
+    color: white;
   }
 
   &__main-list {

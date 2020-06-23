@@ -23,10 +23,6 @@
     display: flex;
     list-style: none;
   }
-  &__btn {
-    text-decoration: none;
-    color: white;
-  }
   &__btn--edit {
     margin-right: 5px;
     color: white;
@@ -39,16 +35,22 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 0 20px;
+    
   }
   &__chat-room {
     color: white;
     padding: 20px 0 40px;
+    
   }
   &__group {
     font-size: 15px;
+    color: white;
+    text-decoration: none;
     }
   &__message {
     font-size: 11px;
     margin-top: 5px;
+    color: white;
+    text-decoration: none;
   }
 }

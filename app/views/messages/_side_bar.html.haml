@@ -4,20 +4,15 @@
       %h3.items-room__name 
         = current_user.name
       %ul.items-room__icon 
-        = link_to "#", class: "Left-side__btn" do
+        = link_to new_group_path do
           = icon('far', 'edit', class: "Left-side__btn--edit")
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog',class: "Left-side__btn--cog")
   .Left-side__main-list
-    .Left-side__chat-room
-      = link_to "#", class: "Left-side__btn" do
-        .Left-side__group お肉
-        .Left-side__message 美味しい
-    .Left-side__chat-room
-      = link_to "#", class: "Left-side__btn" do
-        .Left-side__group 野菜
-        .Left-side__message 美味しい
-    .Left-side__chat-room
-      = link_to "#", class: "Left-side__btn" do
-        .Left-side__group お魚
-        .Left-side__message 美味しい
+    - current_user.groups.each do |group|
+      .Left-side__chat-room
+        = link_to "#" do
+          .Left-side__group 
+            = group.name
+          .Left-side__message 
+            メッセージはありません

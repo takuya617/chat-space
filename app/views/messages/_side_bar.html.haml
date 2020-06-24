@@ -11,8 +11,8 @@
   .Left-side__main-list
     - current_user.groups.each do |group|
       .Left-side__chat-room
-        = link_to "#" do
+        = link_to group_messages_path(group) do
           .Left-side__group 
             = group.name
-          .Left-side__message 
-            メッセージはありません
+          .Left-side__message
+            = group.show_last_message

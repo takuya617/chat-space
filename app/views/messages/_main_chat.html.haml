@@ -2,47 +2,25 @@
   .Right-side__header
     .Right-side__group
       .Right-side__groupName 
-        お肉
+        = @group.name
       %ul.Right-side__memberList
-        Member：
+        MEMBER：
+        
         %li.Right-side__member
-          takuya
+          - @group.users.each do |user|
+            = user.name
     .Right-side__edit-btn
-      = link_to "#" do 
+      = link_to edit_group_path(@group) do 
         Edit
+
   .Right-side__main-list
-    .Right-side__message-room
-      .Right-side__messageInfo
-        .messageInfo__name 
-          タクヤ
-        .messageInfo__day 
-          2020年06月21日15時20分
-      .Right-side__text
-        %p.text__content 
-          美味しい
-    .Right-side__message-room
-      .Right-side__messageInfo
-        .messageInfo__name 
-          タクヤ
-        .messageInfo__day 
-          2020年06月21日15時25分
-      .Right-side__text
-        .text__content 
-          最高
-    .Right-side__message-room
-      .Right-side__messageInfo
-        .messageInfo__name 
-          タクヤ
-        .messageInfo__day 
-          2020年06月21日15時28分
-      .Right-side__text
-        .text__content 
-          お腹減った
-  .Right-side__footer-foom
-    %form.Right-side__new-text
-      .Right-side__input-box
-        %input{type: "text", class: "input-box__message", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon("fas","image", class: "image_icon")
-          %input{type: "file", class: "input-box__image__list"}
-      %input{type: "submit", value: "Send", class: "submit-btn"}
+    = render @messages
+
+  .footer-foom
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__input-box
+        = f.text_field :content, class: 'Form__input-box__message', placeholder: 'type a message'
+        = f.label :image, class: 'Form__input-box__image' do
+          = icon('far', 'image', class: 'Form__image_icon')
+          = f.file_field :image, class: 'Form__input-box__image__list'
+      = f.submit 'Send', class: 'Form__submit-btn'   

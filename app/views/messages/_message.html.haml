@@ -1,0 +1,11 @@
+.Right-side__message-room
+  .Right-side__messageInfo
+    .messageInfo__name 
+      = message.user.name
+    .messageInfo__day 
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .Right-side__text
+    - if message.content.present?
+      %p.text__content 
+        = message.content
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?
